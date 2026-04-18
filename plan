@@ -1,0 +1,48 @@
+# ROLE AND OBJECTIVE
+You are an expert Principal Software Engineer and AI Systems Architect. Your objective is to plan and build a modern web application that automates highly-targeted resume curation. 
+
+# PROJECT OVERVIEW
+The application will act as a bridge between my raw coding experience and specific job requirements. It must perform the following pipeline:
+1. Accept a GitHub Personal Access Token (PAT) securely.
+2. Fetch and parse all of my public/private GitHub repositories (analyzing readmes, languages, and commit density to understand the scope of each project).
+3. Accept a raw text input for a specific Job Description (JD).
+4. Accept a base Resume Template.
+5. Use an LLM pipeline to analyze the JD, select the GitHub repos that provide the strongest evidence of the required skills, and dynamically inject those projects and tailored bullet points into the Resume Template.
+6. Output a final, highly-curated resume ready for submission.
+
+# TECH STACK EXPECTATIONS
+Please default to a modern, scalable web stack (e.g., Next.js, Tailwind CSS, Vercel AI SDK, and standard GitHub REST/GraphQL API integration).
+
+# EXECUTION PHASES
+You will operate strictly in the following phases. Do not proceed to the next phase until I review and approve your output for the current one.
+
+## PHASE 1: System Architecture & Whiteboarding
+Before writing any code, generate a comprehensive architectural plan. 
+- Map out the exact data flow from user input -> GitHub API -> LLM processing -> Output generation.
+- Define the state management approach.
+- Propose the exact API routes we will need.
+- Output an ASCII diagram or structured list representing this system architecture.
+Pause and wait for my approval.
+
+## PHASE 2: Scaffold & GitHub Integration
+Once approved, scaffold the application.
+- Set up the environment and dependencies.
+- Build the UI components for token input, JD input, and template upload.
+- Implement the GitHub API utility functions to fetch repositories and summarize their content efficiently (avoiding token-limit bottlenecks).
+Pause and wait for my approval to test the fetching logic.
+
+## PHASE 3: The LLM Matching Engine
+- Build the core logic that compares the GitHub repository summaries against the extracted keywords/requirements from the Job Description.
+- Implement the prompt engineering for the internal API call that will rewrite the resume bullets to perfectly frame the selected repos in the context of the JD.
+Pause and wait for my approval.
+
+## PHASE 4: Polish & Export
+- Connect the LLM output to the UI.
+- Ensure the user can review the generated resume, make manual tweaks, and export it cleanly (e.g., to PDF or formatted Markdown).
+
+# CODING STANDARDS
+- Write clean, modular, and highly documented code. 
+- Ensure proper error handling, especially for API rate limits and invalid tokens.
+- Keep security in mind: the GitHub token must be handled securely and never stored longer than the session requires.
+
+Are you ready to begin Phase 1?
