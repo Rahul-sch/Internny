@@ -1,0 +1,118 @@
+[
+  {
+    "id": "repowhisper",
+    "name": "RepoWhisper",
+    "stack": "Swift, SwiftUI, Python, FastAPI, Whisper, LanceDB",
+    "date": "Jan. 2026",
+    "tags": ["macOS", "voice", "AI", "search", "vector-db", "swift", "apple-silicon"],
+    "bullets": [
+      "Built macOS menu bar app enabling voice-to-code search with sub-300ms end-to-end latency: audio capture (100ms) + Whisper transcription (120ms) + MPS-accelerated embedding (20ms) + vector search (5ms)",
+      "Engineered stealth overlay invisible to Zoom/Teams screen sharing using NSPanel; optimized for Apple Silicon M2 with float16 Whisper models and Metal Performance Shaders",
+      "Implemented 3 indexing modes (manual, smart, full) with LanceDB vector database; 167 commits, MIT licensed"
+    ]
+  },
+  {
+    "id": "vibeguard",
+    "name": "VibeGuard",
+    "stack": "TypeScript, Node.js, GitHub Actions",
+    "date": "Jan. 2026",
+    "tags": ["security", "cli", "devtools", "typescript", "github-actions", "static-analysis"],
+    "bullets": [
+      "Built npm CLI with 43+ detection rules across 11 security categories; scanned 8,955 files across 3 popular repos finding 838 vulnerabilities (581 critical) at 2,500 files/sec",
+      "Integrated GitHub Actions for automated PR scanning with optional auto-fix; designed allowlist workflow achieving sub-2\\% false positive rate"
+    ]
+  },
+  {
+    "id": "vettriage",
+    "name": "VetTriage",
+    "stack": "React, TypeScript, Groq/Llama 3.3 70B, Supabase",
+    "date": "Jan. 2026",
+    "tags": ["health-tech", "ai", "voice", "pwa", "llm", "realtime"],
+    "bullets": [
+      "Shipped production PWA with real-time voice transcription, automatic speaker diarization, and AI analysis generating structured veterinary intake reports with confidence scores (0.0-1.0)",
+      "Implemented global rate limiting (2s intervals), single-flight locks preventing duplicate API calls, offline-first architecture via service workers; 43 commits"
+    ]
+  },
+  {
+    "id": "nexus",
+    "name": "Nexus",
+    "stack": "Next.js 16, React 19, LangGraph, Supabase, Redis",
+    "date": "Jan. 2026",
+    "tags": ["saas", "multi-agent", "langgraph", "nextjs", "encryption", "rate-limiting"],
+    "bullets": [
+      "Shipped multi-agent SaaS where 4 AI agents (Clarifier, Drafter, Critic, Finalizer) collaborate via LangGraph; sub-200ms API response, 30-90s refinement cycles",
+      "Engineered AES-256-GCM envelope encryption for API keys, 20+ row-level security policies, rate limiting via Upstash Redis (10-100 req/min by endpoint)"
+    ]
+  },
+  {
+    "id": "supercoder",
+    "name": "SuperCoder (SABS)",
+    "stack": "Python, TensorFlow, AST parsing",
+    "date": "Jan. 2026",
+    "tags": ["research", "ml", "security", "llm", "compilers", "python", "arxiv"],
+    "bullets": [
+      "Implemented novel algorithm embedding static security analysis into LLM beam search decoding; score = log\\_prob - lambda * security\\_penalty with tri-state parsing for partial code",
+      "Built LRU cache achieving 632K cached ops/sec; HumanEval 68\\% baseline to 65\\% with security (95\\% accuracy, 100\\% precision). ArXiv paper in preparation"
+    ]
+  },
+  {
+    "id": "dost",
+    "name": "Dost",
+    "stack": "Multi-language, Modular architecture",
+    "date": "2025",
+    "tags": ["open-source", "devtools", "modular"],
+    "bullets": [
+      "Built Dost (Rahul-sch/Dost), a multi-language GitHub repository focused on implementing and experimenting with core application features and utilities",
+      "Implemented modular project structure with reusable components, emphasizing clean separation of concerns across the codebase",
+      "Added end-to-end functionality and supporting scripts/configuration to streamline local development, testing, and iteration"
+    ]
+  },
+  {
+    "id": "skill-sh",
+    "name": "skill.sh",
+    "stack": "Bash, Python, Claude/GPT-4/Gemini APIs",
+    "date": "2025",
+    "tags": ["ai", "llm", "prompt-engineering", "multi-model", "cli", "bash", "python"],
+    "bullets": [
+      "Built skill.sh, a local iterative prompt-refinement engine that chains Claude $\\to$ GPT-4 $\\to$ Gemini across N passes to turn rough ideas into polished, structured prompts",
+      "Designed a multi-model pipeline with configurable model order and iteration count (e.g., \\texttt{--models claude,gpt4,gemini} and \\texttt{--iterations 3}) to progressively add context, structure, and research depth",
+      "Added automatic session persistence to timestamped JSON artifacts capturing original prompt, per-pass outputs, elapsed times, and the final refined result"
+    ]
+  },
+  {
+    "id": "quant-vis-skill",
+    "name": "quant-vis-skill",
+    "stack": "Python, Pandas, matplotlib/plotly",
+    "date": "2025",
+    "tags": ["quant", "finance", "data-viz", "time-series", "python", "dashboards"],
+    "bullets": [
+      "Built \\texttt{quant-vis-skill}, a visualization/analysis module for exploring and presenting market/financial signals across time-series",
+      "Implemented core pipelines to ingest datasets, compute derived metrics, and transform raw time-series into visualization-ready features (cleaning, normalization, resampling)",
+      "Created reusable plotting/visual components (charts/dashboards) to compare strategies, distributions, and performance over time with configurable parameters"
+    ]
+  },
+  {
+    "id": "shadow-clone",
+    "name": "Shadow Clone (OpenClaw)",
+    "stack": "Python, FastAPI, Alpaca API, SQLite",
+    "date": "2025",
+    "tags": ["fintech", "trading", "webhooks", "fastapi", "risk-management", "automation"],
+    "bullets": [
+      "Built an OpenClaw skill (``Shadow Clone'') that scaffolds a FastAPI webhook server to intercept Discord/Telegram trading signals and auto-route them into a paper trader or Alpaca execution flow",
+      "Implemented a sub-200ms, regex-first signal parser with confidence scoring to normalize ticker/direction/entry/stop-loss/take-profit across multiple real-world message formats",
+      "Designed risk-control gates (max position sizing, daily loss limits, ticker allowlist, cooldowns, duplicate detection) with SQLite-backed audit logging for every signal and resulting order"
+    ]
+  },
+  {
+    "id": "tele-goldbch",
+    "name": "Tele-GoldBCH",
+    "stack": "Python, Next.js 15, TypeScript, Alpaca, Redis",
+    "date": "2025",
+    "tags": ["fintech", "trading", "alpaca", "nextjs", "redis", "dashboards", "telegram"],
+    "bullets": [
+      "Built Tele-GoldBCH, a Python day-trader combining Goldbach Bounce + continuation/meta-filter strategy signals with risk controls and audit logging",
+      "Integrated Alpaca (US-compliant paper trading; historical + live candles), optional TradingView CDP chart ingestion, and Telegram alert delivery; automated bootstrap via \\texttt{run.sh}",
+      "Developed a Next.js 15 + TypeScript + Tailwind mobile dashboard polling Redis-backed API routes to display live bot status, positions, and performance, with start/stop command dispatch via Redis keys"
+    ]
+  }
+]

@@ -5,16 +5,8 @@
 import { z } from "zod";
 
 const schema = z.object({
-  ANTHROPIC_API_KEY: z.string().min(1, "ANTHROPIC_API_KEY is required"),
-  UPSTASH_REDIS_REST_URL: z.string().url(),
-  UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
-  SESSION_SECRET: z
-    .string()
-    .min(32, "SESSION_SECRET must be at least 32 characters"),
-  SESSION_TTL_SECONDS: z
-    .string()
-    .optional()
-    .transform((v) => (v ? Number.parseInt(v, 10) : 7200)),
+  GROQ_API_KEY: z.string().min(1, "GROQ_API_KEY is required"),
+  TECTONIC_BIN: z.string().optional(),
 });
 
 let cached: z.infer<typeof schema> | null = null;

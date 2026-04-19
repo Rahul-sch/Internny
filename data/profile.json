@@ -1,0 +1,44 @@
+{
+  "name": "Rahul Bainsla",
+  "phone": "804-200-8238",
+  "email": "rahul.bainsla2005@gmail.com",
+  "linkedin": {
+    "url": "https://linkedin.com/in/rahul-bainsla",
+    "label": "linkedin.com/in/rahul-bainsla"
+  },
+  "github": {
+    "url": "https://github.com/Rahul-sch",
+    "label": "github.com/Rahul-sch"
+  },
+  "education": [
+    {
+      "school": "Virginia Tech",
+      "location": "Blacksburg, VA",
+      "degree": "Bachelor of Science in Computer Science",
+      "dates": "Aug. 2023 -- May 2026"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer, Distributed Systems",
+      "dates": "Jan. 2026 -- Present",
+      "company": "Ithena",
+      "location": "Remote",
+      "bullets": [
+        "Architected real-time telemetry pipeline processing 50+ sensor parameters via Kafka with exactly-once delivery semantics (acks=all, idempotent writes, manual offset commits)",
+        "Built hybrid anomaly detection combining Isolation Forest + LSTM autoencoder on 20-reading sequences; achieved 95\\% detection accuracy with sub-5\\% false positive rate",
+        "Delivered 3D digital twin using React Three Fiber rendering at 60 FPS via Zustand transient state; implemented vibration-to-jitter and temperature-to-color sensor mappings"
+      ]
+    },
+    {
+      "title": "Co-Founder \\& CTO",
+      "dates": "Oct. 2025 -- Present",
+      "company": "MedRa Robotics",
+      "location": "San Francisco, CA",
+      "bullets": [
+        "Co-founded autonomous radiation-shielding robotics startup; leading team of 4 engineers building system to eliminate lead vests during interventional radiology procedures",
+        "Secured pilot pathway with Providence Hospital; preparing manufacturing sprint at Future Factory China (Mar 2026)"
+      ]
+    }
+  ]
+}

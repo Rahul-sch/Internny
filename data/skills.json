@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "id": "languages",
+      "label": "Languages",
+      "items": ["Python", "TypeScript", "Swift", "SQL", "JavaScript", "HTML/CSS"]
+    },
+    {
+      "id": "frameworks",
+      "label": "Frameworks",
+      "items": ["Next.js", "React", "FastAPI", "Flask", "LangGraph", "SwiftUI", "React Three Fiber"]
+    },
+    {
+      "id": "infrastructure",
+      "label": "Infrastructure",
+      "items": ["Kafka", "PostgreSQL", "Supabase", "Docker", "Vercel", "GitHub Actions", "Redis"]
+    },
+    {
+      "id": "ai_ml",
+      "label": "AI/ML",
+      "items": ["Multi-agent orchestration", "RAG", "Isolation Forest", "LSTM autoencoders", "Whisper", "LanceDB", "Groq"]
+    }
+  ]
+}

@@ -3,17 +3,15 @@
  * Clients can switch on `error.code` to drive UX.
  */
 import { NextResponse } from "next/server";
-import { SessionError } from "./session";
 
 export type ErrorCode =
-  | "AUTH_MISSING"
-  | "AUTH_EXPIRED"
-  | "AUTH_INVALID_PAT"
-  | "GITHUB_RATE_LIMIT"
-  | "GITHUB_UNAVAILABLE"
+  | "VALIDATION"
+  | "NOT_FOUND"
+  | "DUPLICATE"
   | "LLM_TIMEOUT"
   | "LLM_SCHEMA_MISMATCH"
-  | "VALIDATION"
+  | "TECTONIC_MISSING"
+  | "COMPILE_FAILED"
   | "INTERNAL";
 
 export class AppError extends Error {
@@ -55,9 +53,6 @@ export function withErrorEnvelope<T>(
   return handler().catch((err: unknown) => {
     if (err instanceof AppError) {
       return fail(err.code, err.message, err.status, err.hint);
-    }
-    if (err instanceof SessionError) {
-      return fail(err.code, err.message, 401);
     }
     console.error("[api] unhandled error:", err);
     return fail(

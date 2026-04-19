@@ -32,9 +32,19 @@ async function parseEnvelope<T>(res: Response): Promise<T> {
   return body.data;
 }
 
-export async function apiPost<T>(path: string, body: unknown): Promise<T> {
+export async function apiPost<T>(path: string, body?: unknown): Promise<T> {
   const res = await fetch(path, {
     method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body ?? {}),
+    credentials: "same-origin",
+  });
+  return parseEnvelope<T>(res);
+}
+
+export async function apiPatch<T>(path: string, body?: unknown): Promise<T> {
+  const res = await fetch(path, {
+    method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body ?? {}),
     credentials: "same-origin",
@@ -45,54 +55,4 @@ export async function apiPost<T>(path: string, body: unknown): Promise<T> {
 export async function apiGet<T>(path: string): Promise<T> {
   const res = await fetch(path, { credentials: "same-origin" });
   return parseEnvelope<T>(res);
-}
-
-/**
- * Consume an NDJSON stream, invoking `onLine` for each parsed object.
- * Throws if the response isn't OK at the HTTP level.
- */
-export async function streamNdjson(
-  path: string,
-  body: unknown,
-  onLine: (obj: unknown) => void,
-): Promise<void> {
-  const res = await fetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body ?? {}),
-    credentials: "same-origin",
-  });
-  if (!res.ok || !res.body) {
-    const fallback = await res.text().catch(() => "");
-    throw new ApiError(
-      "STREAM",
-      `Stream failed (${res.status}): ${fallback.slice(0, 200)}`,
-    );
-  }
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buf = "";
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buf += decoder.decode(value, { stream: true });
-    let nl: number;
-    while ((nl = buf.indexOf("\n")) !== -1) {
-      const line = buf.slice(0, nl).trim();
-      buf = buf.slice(nl + 1);
-      if (!line) continue;
-      try {
-        onLine(JSON.parse(line));
-      } catch {
-        /* ignore malformed chunks */
-      }
-    }
-  }
-  if (buf.trim()) {
-    try {
-      onLine(JSON.parse(buf.trim()));
-    } catch {
-      /* ignore trailing partial */
-    }
-  }
 }

@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "InternShippy",
-  description:
-    "Curate a resume tailored to a specific JD, using evidence from your real GitHub repos.",
+  description: "Tailored LaTeX resumes for YC / a16z startup applications.",
 };
 
 export default function RootLayout({
